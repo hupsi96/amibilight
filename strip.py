@@ -198,7 +198,8 @@ class strip_config:
         rng = 500 - 152
         factor = 255.0/rng
         print(factor)
-        print(str(factor * float(value - 152)))
+        print(value - 153)
+        print(str(factor * float(value - 153)))
         for x in range(strip.numPixels()):
             strip.setPixelColor(x, Color(0,0,0,int(factor * float(value - 152))))
         strip.show()
