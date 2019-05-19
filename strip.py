@@ -200,28 +200,10 @@ class strip_config:
         trueValue = int(value) - 153
         setValue = factor * float(trueValue)
 
-        currentBrightness = strip.getBrightness()
-        delta = int(currentBrightness - setValue)
-        print(delta)
-        #value for for-loop - has to be positiv
-        boundary = delta if delta > 0 else (delta * (-1))
-        for x in range(0,boundary +1):
-            if delta < 0:
-                for x in range(strip.numPixels()):
-                    strip.setPixelColor(x, Color(0,0,0,int(currentBrightness + x)))
-            elif delta > 0:
-                for x in range(strip.numPixels()):
-                    strip.setPixelColor(x, Color(0,0,0,int(currentBrightness - x)))
-            if not self.testMode:
-                strip.show()
-            time.sleep(self.fadeTime)
-        logging.info('White brightness set to: +' + str(value))
-        if update:
-            for x in range(strip.numPixels()):
-                current = self.stripStatusList[x]
-                current[0] = int(value)
-                self.stripStatusList[x] = current
-        print("Done")
+        for x in range(strip.numPixels()):
+            strip.setPixelColor(x, Color(0,0,0,255))
+        
+        self.fadeStripBrightness(int(setValue,True))
 
 
     def test_Pixel_numbers (self):
