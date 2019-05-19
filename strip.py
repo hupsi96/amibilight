@@ -205,7 +205,6 @@ class strip_config:
             strip.setPixelColor(x, Color(0,0,0,self.stripStatusList[x][0]))
         
         #strip.setBrightness(100)
-        strip.show()
         self.fadeStripBrightness(int(setValue),True)
 
 
