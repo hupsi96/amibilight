@@ -203,7 +203,7 @@ class strip_config:
         trueValue = int(value) - 153
         setValue = factor * float(trueValue)
         for x in range(strip.numPixels()):
-            strip.setPixelColor(x, Color(0,0,0,0))
+            strip.setPixelColor(x, Color(0,0,0,10))
         
         #strip.setBrightness(255)
         print(setValue)
