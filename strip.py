@@ -200,7 +200,7 @@ class strip_config:
         print(factor)
         print(str(factor * float(value)))
         for x in range(strip.numPixels()):
-            strip.setPixelColor(x, Color(0,0,0,int(factor * float(value))- 152))
+            strip.setPixelColor(x, Color(0,0,0,int(factor * float(value - 152))))
         strip.show()
 
 
