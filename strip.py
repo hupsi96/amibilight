@@ -194,6 +194,12 @@ class strip_config:
             self.fadeTime = 0.03
 
 
+    def setWhiteValue(self, value):
+        for x range(strip.numPixels()):
+            strip.setPixelColor(x, Color(0,0,0,255))
+            strip.show()
+
+
     def test_Pixel_numbers (self):
         for x in range(strip.numPixels()):
             strip.setPixelColorRGB(x,37,74,0)
