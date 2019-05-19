@@ -224,12 +224,6 @@ class strip_config:
         print("Done")
 
 
-
-        for x in range(strip.numPixels()):
-            strip.setPixelColor(x, Color(0,0,0,int(setValue)))
-        strip.show()
-
-
     def test_Pixel_numbers (self):
         for x in range(strip.numPixels()):
             strip.setPixelColorRGB(x,37,74,0)
