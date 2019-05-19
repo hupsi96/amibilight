@@ -44,8 +44,8 @@ class strip_config:
         self.fadeTime = 0.005
 
         # List to store current color values
-        #The tupel show the values (brightness,red,green,blue,brightness)
-        self.stripStatusList = [[0,0,0,0]] * num
+        #The tupel show the values (white,red,green,blue,brightness)
+        self.stripStatusList = [[0,0,0,0,0]] * num
         self.switchStatus = True
         #Test Color
         for x in range(strip.numPixels()):
@@ -197,11 +197,33 @@ class strip_config:
     def setWhiteValue(self, value):
         rng = 500 - 152
         factor = 255.0/rng
-        print(factor)
         trueValue = int(value) - 153
-        print(trueValue)
         setValue = factor * float(trueValue)
-        print(setValue)
+
+        currentBrightness = strip.getBrightness()
+        delta = currentBrightness - setValue
+
+        #value for for-loop - has to be positiv
+        boundary = delta if delta > 0 else (delta * (-1))
+        for x in range(0,boundary +1):
+            if delta < 0:
+                for x in range(strip.numPixels()):
+                    strip.setPixelColor(x, Color(0,0,0,int(currentBrightness + x)))
+            elif delta > 0:
+                for x in range(strip.numPixels()):
+                    strip.setPixelColor(x, Color(0,0,0,int(currentBrightness - x)))
+            if not self.testMode:
+                strip.show()
+            time.sleep(self.fadeTime)
+        logging.info('White brightness set to: +' + str(value))
+        if update:
+            for x in range(strip.numPixels()):
+                current = self.stripStatusList[x]
+                current[0] = int(value)
+                self.stripStatusList[x] = current
+        print("Done")
+
+
 
         for x in range(strip.numPixels()):
             strip.setPixelColor(x, Color(0,0,0,int(setValue)))
