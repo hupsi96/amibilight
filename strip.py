@@ -50,7 +50,7 @@ class strip_config:
         #Test Color
         for x in range(strip.numPixels()):
             strip.setPixelColorRGB(x,100,100,100)
-            self.stripStatusList[x] = [0,100,100,100,10]
+            self.stripStatusList[x] = [255,100,100,100,10]
         strip.setBrightness(10)
         self.switchStatus = True
         if not self.testMode:
@@ -207,7 +207,7 @@ class strip_config:
             y = self.ColorNum(strip.getPixelColor(x))
             print(str(y[0]) +" " + str(y[1]) + " " + str(y[2]) + " "+ str(y[3]))
 
-            strip.setPixelColor(x, Color(0,0,0,strip.getBrightness()))
+            strip.setPixelColor(x, Color(0,0,0,self.stripStatusList[x][0]))
         
         #strip.setBrightness(255)
         print(setValue)
