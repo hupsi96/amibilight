@@ -194,7 +194,7 @@ class strip_config:
             self.fadeTime = 0.03
 
 
-    def setWhiteValue(self, value):
+    def setWhiteValue(self, value, update):
         rng = 500 - 152
         factor = 255.0/rng
         trueValue = int(value) - 153
@@ -202,7 +202,7 @@ class strip_config:
 
         currentBrightness = strip.getBrightness()
         delta = currentBrightness - setValue
-
+        print(delta)
         #value for for-loop - has to be positiv
         boundary = delta if delta > 0 else (delta * (-1))
         for x in range(0,boundary +1):

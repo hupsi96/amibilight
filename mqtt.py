@@ -38,7 +38,7 @@ class main:
             strip.setFadeSpeed(msg.payload)
 
         elif msg.topic == "zimmer/project/temp/set":
-            strip.setWhiteValue(msg.payload)
+            strip.setWhiteValue(msg.payload, True)
 
     client = mqtt.Client()
     client.on_connect = on_connect
