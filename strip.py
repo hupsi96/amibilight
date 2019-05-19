@@ -195,7 +195,7 @@ class strip_config:
 
 
     def setWhiteValue(self, value):
-        for x range(strip.numPixels()):
+        for x in range(strip.numPixels()):
             strip.setPixelColor(x, Color(0,0,0,255))
             strip.show()
 
