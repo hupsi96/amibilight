@@ -202,9 +202,9 @@ class strip_config:
         setValue = factor * float(trueValue)
         print(int(strip.getBrightness() + 1))
         for x in range(strip.numPixels()):
-            strip.setPixelColor(x, Color(0,0,0,255))
+            strip.setPixelColor(x, Color(0,0,0,strip.getBrightness()))
         
-        strip.setBrightness(255)
+        #strip.setBrightness(255)
         print(setValue)
         print(strip.getBrightness())
         self.fadeStripBrightness(int(setValue),True)
