@@ -198,7 +198,7 @@ class strip_config:
         rng = 500 - 152
         factor = 255.0/rng
         print(factor)
-        trueValue = value - 153
+        trueValue = int(value) - 153
         print(trueValue)
         setValue = factor * float(trueValue)
         print(setValue)
