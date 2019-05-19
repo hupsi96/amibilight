@@ -205,7 +205,7 @@ class strip_config:
         for x in range(strip.numPixels()):
             
             y = self.ColorNum(strip.getPixelColor(x))
-            print(str(y[0]) +" " + str(y[1]) + " " + str(y[2]) + ""+ str(y[3]))
+            print(str(y[0]) +" " + str(y[1]) + " " + str(y[2]) + " "+ str(y[3]))
 
             strip.setPixelColor(x, Color(0,0,0,strip.getBrightness()))
         
