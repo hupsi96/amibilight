@@ -177,7 +177,7 @@ class strip_config:
                         #print(str(red_new)+","+ str(green_new)+"," + str(blue_new))
                 if not self.testMode:
                     strip.show()
-                #time.sleep(fadeTime/8)
+                time.sleep(fadeTime)
         
         #adjust stored r,g,b values
         for x in range(strip.numPixels()):
