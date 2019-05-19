@@ -204,6 +204,8 @@ class strip_config:
         setValue = factor * float(trueValue)
         for x in range(strip.numPixels()):
             strip.setPixelColor(x, Color(0,0,0,strip.getBrightness()))
+            for y in range(self.ColorNum(strip.getPixelColor(x))):
+                print(str(y[0]) +" " + str(y[1]) + " " + str(y[2]) + ""+ str(y[3]))
         
         #strip.setBrightness(255)
         print(setValue)
