@@ -201,7 +201,7 @@ class strip_config:
         setValue = factor * float(trueValue)
 
         currentBrightness = strip.getBrightness()
-        delta = currentBrightness - setValue
+        delta = int(currentBrightness - setValue)
         print(delta)
         #value for for-loop - has to be positiv
         boundary = delta if delta > 0 else (delta * (-1))
