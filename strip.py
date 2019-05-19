@@ -199,9 +199,9 @@ class strip_config:
         factor = 255.0/rng
         trueValue = int(value) - 153
         setValue = factor * float(trueValue)
-        print(int(strip.getBrightness()))
+        print(int(strip.getBrightness() + 1))
         for x in range(strip.numPixels()):
-            strip.setPixelColor(x, Color(0,0,0,strip.getBrightness()))
+            strip.setPixelColor(x, Color(0,0,0,strip.getBrightness() + 1))
         
         #strip.setBrightness(100)
         strip.show()
