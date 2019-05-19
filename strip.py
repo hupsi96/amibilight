@@ -204,7 +204,7 @@ class strip_config:
         print(setValue)
 
         for x in range(strip.numPixels()):
-            strip.setPixelColor(x, Color(0,0,0,100))
+            strip.setPixelColor(x, Color(0,0,0,int(setValue)))
         strip.show()
 
 
