@@ -108,6 +108,7 @@ class strip_config:
             for x in range(strip.numPixels()):
                 current = self.stripStatusList[x]
                 current[4] = int(value)
+                current[0] = int(value)
                 self.stripStatusList[x] = current
         print("Done")
 
@@ -201,7 +202,7 @@ class strip_config:
         setValue = factor * float(trueValue)
         print(int(strip.getBrightness() + 1))
         for x in range(strip.numPixels()):
-            strip.setPixelColor(x, Color(0,0,0,10))
+            strip.setPixelColor(x, Color(0,0,0,self.stripStatusList[x][0]))
         
         #strip.setBrightness(100)
         strip.show()
