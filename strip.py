@@ -15,9 +15,6 @@ class strip_config:
     LED_CHANNEL    = 0
     LED_STRIP      = ws.SK6812_STRIP_RGBW
 
-
-
-
     #define strip globaly and set default values
     global strip
     strip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS, LED_CHANNEL, LED_STRIP) #default setting """Adafruit_NeoPixel"""
