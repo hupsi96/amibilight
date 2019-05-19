@@ -196,7 +196,7 @@ class strip_config:
 
     def setWhiteValue(self, value):
         rng = 500 - 152
-        factor = 255/rng
+        factor = 255.0/rng
         print(factor)
         print(str(factor * value))
         for x in range(strip.numPixels()):
