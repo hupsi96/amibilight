@@ -10,8 +10,8 @@ class strip_config:
     LED_FREQ_HZ    = 800000  # LED signal frequency in hertz (usually 800khz)
     LED_DMA        = 9      # DMA channel to use for generating signal (try 10)
     LED_BRIGHTNESS = 255     # Set to 0 for darkest and 255 for brightest
-    LED_INVERT     = False   # True to invert the signal (when using NPN transistor level shift)
-    LED_CHANNEL    = 5
+    LED_INVERT     = True   # True to invert the signal (when using NPN transistor level shift)
+    LED_CHANNEL    = 0
     LED_STRIP      = ws.SK6812_STRIP_RGBW # setup for new strip
 
     #define strip globaly and set default values
