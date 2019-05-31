@@ -24,20 +24,20 @@ class main:
     def on_message(client, userdata, msg):
         print(msg.topic+" "+str(msg.payload))
         
-        if msg.topic == "zimmer/project/brightness/set":
+        if msg.topic == "zimmer/project2/brightness/set":
             strip.fadeStripBrightness(int(msg.payload),True)
 
-        elif msg.topic == "zimmer/project/light/switch":
+        elif msg.topic == "zimmer/project2light/switch":
             strip.switch(msg.payload)
 
-        elif msg.topic == "zimmer/project/rgb/set":
+        elif msg.topic == "zimmer/project2/rgb/set":
             values = msg.payload.split(',')
             strip.fadeColor(int(values[0]),int(values[1]),int(values[2]))
         
-        elif msg.topic == "zimmer/project/effect/set":
+        elif msg.topic == "zimmer/project2/effect/set":
             strip.setFadeSpeed(msg.payload)
 
-        elif msg.topic == "zimmer/project/temp/set":
+        elif msg.topic == "zimmer/project2/temp/set":
             strip.setWhiteValue(msg.payload, True)
 
     client = mqtt.Client()
