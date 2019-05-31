@@ -27,7 +27,7 @@ class main:
         if msg.topic == "zimmer/project2/brightness/set":
             strip.fadeStripBrightness(int(msg.payload),True)
 
-        elif msg.topic == "zimmer/project2light/switch":
+        elif msg.topic == "zimmer/project2/light/switch":
             strip.switch(msg.payload)
 
         elif msg.topic == "zimmer/project2/rgb/set":
