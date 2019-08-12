@@ -5,7 +5,7 @@ import numpy as np
 class strip_config:
 
 
-    LED_COUNT      = 60     # Number of LED pixels.
+    LED_COUNT      = 58     # Number of LED pixels.
     LED_PIN        = 18     # GPIO pin connected to the pixels (must support PWM!).
     LED_FREQ_HZ    = 800000  # LED signal frequency in hertz (usually 800khz)
     LED_DMA        = 10      # DMA channel to use for generating signal (try 10)
