@@ -10,7 +10,7 @@ class main:
     logging.info('Main programm started')
 
     global strip #why has it to be global?
-    strip = st.strip_config(58, 18) #2nd param should be reset to 18 after remote testing count: 58
+    strip = st.strip_config(65, 18) #2nd param should be reset to 18 after remote testing count: 58
 
     def on_connect(client, userdata, flags, rc):
         logging.info("Mqtt connection established - " +str(rc))
